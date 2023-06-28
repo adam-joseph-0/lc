@@ -21,4 +21,21 @@
 
 // Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
 
-function isSubsequence(s: string, t: string): boolean {}
+function isSubsequence(s: string, t: string): boolean {
+  // pointer for first string
+  // Looping over t, check if current char matches char at s pointer location
+
+  let pointer = 0;
+
+  for (const char of t) {
+    if (char === s[pointer]) {
+      pointer++;
+    }
+
+    if (pointer === s.length) {
+      return true;
+    }
+  }
+
+  return false;
+}
