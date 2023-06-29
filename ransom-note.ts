@@ -32,6 +32,13 @@ function canConstruct(ransomNote: string, magazine: string): boolean {
   }
 
   // Loop over ransomeNote, decrement num of occurrences, return false if unable to
+  for (let letter of ransomNote) {
+    if (letters[letter] > 0) {
+      letters[letter]--;
+    } else {
+      return false;
+    }
+  }
 
   return true;
 }
