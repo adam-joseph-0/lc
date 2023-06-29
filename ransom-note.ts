@@ -19,3 +19,19 @@
 
 // 1 <= ransomNote.length, magazine.length <= 105
 // ransomNote and magazine consist of lowercase English letters.
+
+function canConstruct(ransomNote: string, magazine: string): boolean {
+  const letters = {};
+
+  for (let letter of magazine) {
+    if (letters[letter] > 0) {
+      letters[letter]++;
+    } else {
+      letters[letter] = 1;
+    }
+  }
+
+  // Loop over ransomeNote, decrement num of occurrences, return false if unable to
+
+  return true;
+}
