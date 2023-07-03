@@ -36,7 +36,7 @@
 // nums is sorted in ascending order.
 
 function summaryRanges(nums: number[]): string[] {
-  const result = [];
+  const result: string[] = [];
   let currentRange = "";
   // Loop over each element in nums
   nums.forEach((num, i) => {
@@ -45,12 +45,16 @@ function summaryRanges(nums: number[]): string[] {
       currentRange = num.toString();
     } else if (nums[i + 1] === num + 1) {
       // Continue a range (if the current value === previous value +1)
-      if (currentRange.slice(currentRange.length - 1, -2) != "->") {
+      if (currentRange.slice(-2) != "->") {
+        currentRange += "->";
+      } else {
+        // Finish a range (if the current value is > previous value +1)
+        currentRange += num.toString();
+        result.push(currentRange);
+        currentRange = "";
       }
     }
   });
-
-  // Finish a range (if the current value is > previous value +1)
 
   return result;
 }
