@@ -2,7 +2,8 @@
 
 // A range [a,b] is the set of all integers from a to b (inclusive).
 
-// Return the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
+// Return the smallest sorted list of ranges that cover all the numbers in the array exactly.
+// That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
 
 // Each range [a,b] in the list should be output as:
 
@@ -34,4 +35,9 @@
 // All the values of nums are unique.
 // nums is sorted in ascending order.
 
-function summaryRanges(nums: number[]): string[] {}
+function summaryRanges(nums: number[]): string[] {
+  // Loop over each element in nums
+  // Start a new range (if our range var is empty)
+  // Finish a range (if the current value is > previous value +1)
+  // Continue a range (if the current value === previous value +1)
+}
